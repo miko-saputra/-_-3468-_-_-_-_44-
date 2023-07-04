@@ -1,3 +1,2 @@
 # Sincu-web23
-
-miko Saputra 
+https://miko-saputra.github.io/Sincu-web23/
