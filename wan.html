@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Halaman Vidio Baru</title>
+    <style>
+    body{
+      background-color: black;
+    }
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .video-container video {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="video-container" id="videoContainer">
+  <!-- Video-video akan ditambahkan di sini oleh JavaScript -->
+</div>
+
+<script>
+  // Fungsi untuk membuat video secara dinamis dengan ukuran acak
+  function tambahkanVideo() {
+    var container = document.getElementById("videoContainer");
+
+    for (var i = 1; i <= 11; i++) {
+      var video = document.createElement("video");
+      video.controls = true;
+      video.autoplay = true;
+      
+      var width = Math.floor(Math.random() * (800 - 300 + 1)) + 300; // Lebar acak antara 300 dan 800
+      var height = Math.floor(Math.random() * (600 - 200 + 1)) + 200; // Tinggi acak antara 200 dan 600
+      video.width = width;
+      video.height = height;
+
+      var source = document.createElement("source");
+      source.src = i + ".mp4"; // Ubah dengan nama file video yang sesuai
+      source.type = "video/mp4";
+
+      video.appendChild(source);
+      container.appendChild(video);
+    }
+  }
+
+  // Panggil fungsi tambahkanVideo untuk menambahkan video ke dalam div videoContainer
+  tambahkanVideo();
+</script>
+
+</body>
+</html>
